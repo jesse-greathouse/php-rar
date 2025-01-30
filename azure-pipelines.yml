@@ -83,3 +83,67 @@ jobs:
       phpVersion: '8.0'
       clang: true
       valgrind: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_1
+      displayName: PHP 8.1 ZTS
+      phpVersion: '8.1'
+      zts: true
+      publishCoverage: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_1_valgrind
+      displayName: PHP 8.1 (valgrind, clang)
+      phpVersion: '8.1'
+      clang: true
+      valgrind: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_2
+      displayName: PHP 8.2 ZTS
+      phpVersion: '8.2'
+      zts: true
+      publishCoverage: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_2_valgrind
+      displayName: PHP 8.2 (valgrind, clang)
+      phpVersion: '8.0'
+      clang: true
+      valgrind: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_3
+      displayName: PHP 8.3 ZTS
+      phpVersion: '8.3'
+      zts: true
+      publishCoverage: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_3_valgrind
+      displayName: PHP 8.3 (valgrind, clang)
+      phpVersion: '8.3'
+      clang: true
+      valgrind: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_4
+      displayName: PHP 8.4 ZTS
+      phpVersion: '8.4'
+      zts: true
+      publishCoverage: true
+
+  - template: azure-template.yml
+    parameters:
+      name: php_8_4_valgrind
+      displayName: PHP 8.4 (valgrind, clang)
+      phpVersion: '8.4'
+      clang: true
+      valgrind: true
