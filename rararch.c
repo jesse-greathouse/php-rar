@@ -1241,7 +1241,12 @@ void minit_rararch(TSRMLS_D)
 
 	memcpy(&rararch_object_handlers, zend_get_std_object_handlers(),
 		sizeof rararch_object_handlers);
-	rararch_object_handlers.count_elements  = rararch_count_elements;
+	#if PHP_VERSION_ID >= 80400
+        rararch_object_handlers.count_elements =
+        (zend_object_count_elements_t) rararch_count_elements;
+	#else
+		rararch_object_handlers.count_elements = rararch_count_elements;
+	#endif
 	rararch_object_handlers.read_dimension  = rararch_read_dimension;
 	rararch_object_handlers.write_dimension = rararch_write_dimension;
 	rararch_object_handlers.has_dimension   = rararch_has_dimension;
